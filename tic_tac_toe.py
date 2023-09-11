@@ -6,6 +6,7 @@ usuario = "O"
 vez = 1  # 1 - usuário; 2 - computador
 continua = True
 
+
 print("-------------------------------------")
 print("--- JOGO DA VELHA --- TIC-TAC-TOE ---")
 print("-------------------------------------\n")
@@ -76,7 +77,7 @@ def sorteio(jogador):
 
 
 def exibir_tabuleiro():
-    print("          +---------------------------------+")
+    print("\n          +---------------------------------+")
     print("          |                                 |")
     print("          |   1       | 2       | 3         |")
     print(f"          |      {tabuleiro[0]}    |    {tabuleiro[1]}    |    {tabuleiro[2]}      |")
