@@ -1,13 +1,13 @@
 import random
 
 # todo: REGRAS E PENDÊNCIAS A FAZER
-# todo: 3 - Detectar quando houver um vencedor e encerrar o jogo
 # todo: 4 - Detecar se o tabuleiro ficar cheio e não houver vencedor e encerrar o jogo
 
 tabuleiro = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 computador = "X"
 usuario = "O"
-vez = 1
+vez = 1  # 1 - usuário; 2 - computador
+continua = True
 
 print("-------------------------------------")
 print("--- JOGO DA VELHA --- TIC-TAC-TOE ---")
@@ -20,7 +20,7 @@ print("---     Você      ---      O      ---")
 print("-------------------------------------\n")
 
 
-def quem_comeca():
+def quem_comeca():  # 1 - usuário; 2 - computador
     print("Responda quem deve iniciar a jogada:")
     print("Digite 1 para VOCÊ iniciar;")
     print("Digite outro número para o COMPUTADOR iniciar:")
@@ -36,13 +36,16 @@ def jogada():
     global vez
     if (vez == 1):  # Vez do usuário
         input("\nSUA JOGADA: Está pronto para isso? (pressione <ENTER>)")
+        jogador = usuario
         jogada_escolha_usuario()
-        # sorteio(usuario)
         vez = 2
+
     else:  # Vez do computador
         input("\nJOGADA DO COMPUTADOR: Está pronto para isso? (pressione <ENTER>)")
+        jogador = computador
         sorteio(computador)
         vez = 1
+    verifica_venceu_partida(jogador)
 
 
 def jogada_escolha_usuario():
@@ -62,7 +65,7 @@ def jogada_escolha_usuario():
         tabuleiro[posicao - 1] = "O"
         exibir_tabuleiro()
     else:
-        print("Posição escolhida JÁ ESTÁ OCUPADA!. Sua jogada será por sorteio.")
+        print("Posição escolhida JÁ ESTÁ OCUPADA!. Sua jogada será por sorteio.....")
         sorteio(usuario)
 
 
@@ -93,9 +96,37 @@ def exibir_tabuleiro():
     print("          +---------------------------------+")
 
 
+def verifica_venceu_partida(jogador):
+    global continua
+    vencedor = ("VOCÊ", "COMPUTADOR")[jogador == "X"]
+    if ( (tabuleiro[0]==jogador) and (tabuleiro[1]==jogador) and (tabuleiro[2]==jogador) ):
+        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        continua = False
+    elif ( (tabuleiro[3]==jogador) and (tabuleiro[4]==jogador) and (tabuleiro[5]==jogador) ):
+        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        continua = False
+    elif ((tabuleiro[6] == jogador) and (tabuleiro[7] == jogador) and (tabuleiro[8] == jogador)):
+        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        continua = False
+    elif ( (tabuleiro[0]==jogador) and (tabuleiro[3]==jogador) and (tabuleiro[6]==jogador) ):
+        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        continua = False
+    elif ( (tabuleiro[1]==jogador) and (tabuleiro[4]==jogador) and (tabuleiro[7]==jogador) ):
+        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        continua = False
+    elif ( (tabuleiro[2]==jogador) and (tabuleiro[5]==jogador) and (tabuleiro[8]==jogador) ):
+        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        continua = False
+    elif ( (tabuleiro[0]==jogador) and (tabuleiro[4]==jogador) and (tabuleiro[8]==jogador) ):
+        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        continua = False
+    elif ( (tabuleiro[2]==jogador) and (tabuleiro[4]==jogador) and (tabuleiro[6]==jogador) ):
+        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        continua = False
+
 # EXECUÇÃO DO PROJETO:
 quem_comeca()
 
 # todo: Função apenas para testes. Será melhorada conforme taferas descritas nos comentários iniciais
-while True:
+while (continua):
     jogada()
