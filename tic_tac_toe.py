@@ -1,8 +1,5 @@
 import random
 
-# todo: REGRAS E PENDÊNCIAS A FAZER
-# todo: 4 - Detecar se o tabuleiro ficar cheio e não houver vencedor e encerrar o jogo
-
 tabuleiro = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 computador = "X"
 usuario = "O"
@@ -124,6 +121,10 @@ def verifica_venceu_partida(jogador):
     elif ( (tabuleiro[2]==jogador) and (tabuleiro[4]==jogador) and (tabuleiro[6]==jogador) ):
         print(mensagem)
         continua = False
+    elif not (" " in tabuleiro):
+        print(f"- - - FINAL DO JOGO: NINGÉM VENCEU A PARTIDA. DEU VELHA !!! - - -")
+        continua = False
+
 
 
 # --- EXECUÇÃO DO PROJETO ---
