@@ -125,9 +125,9 @@ def verifica_venceu_partida(jogador):
         print(mensagem)
         continua = False
 
-# EXECUÇÃO DO PROJETO:
+
+# --- EXECUÇÃO DO PROJETO ---
 quem_comeca()
 
-# todo: Função apenas para testes. Será melhorada conforme taferas descritas nos comentários iniciais
 while (continua):
     jogada()
