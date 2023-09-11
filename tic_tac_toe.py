@@ -99,29 +99,30 @@ def exibir_tabuleiro():
 def verifica_venceu_partida(jogador):
     global continua
     vencedor = ("VOCÊ", "COMPUTADOR")[jogador == "X"]
+    mensagem = f"- - - FINAL DO JOGO: {vencedor} VENCEU A PARTIDA !!! - - -"
     if ( (tabuleiro[0]==jogador) and (tabuleiro[1]==jogador) and (tabuleiro[2]==jogador) ):
-        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        print(mensagem)
         continua = False
     elif ( (tabuleiro[3]==jogador) and (tabuleiro[4]==jogador) and (tabuleiro[5]==jogador) ):
-        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        print(mensagem)
         continua = False
     elif ((tabuleiro[6] == jogador) and (tabuleiro[7] == jogador) and (tabuleiro[8] == jogador)):
-        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        print(mensagem)
         continua = False
     elif ( (tabuleiro[0]==jogador) and (tabuleiro[3]==jogador) and (tabuleiro[6]==jogador) ):
-        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        print(mensagem)
         continua = False
     elif ( (tabuleiro[1]==jogador) and (tabuleiro[4]==jogador) and (tabuleiro[7]==jogador) ):
-        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        print(mensagem)
         continua = False
     elif ( (tabuleiro[2]==jogador) and (tabuleiro[5]==jogador) and (tabuleiro[8]==jogador) ):
-        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        print(mensagem)
         continua = False
     elif ( (tabuleiro[0]==jogador) and (tabuleiro[4]==jogador) and (tabuleiro[8]==jogador) ):
-        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        print(mensagem)
         continua = False
     elif ( (tabuleiro[2]==jogador) and (tabuleiro[4]==jogador) and (tabuleiro[6]==jogador) ):
-        print(f"- - - {vencedor} VENCEU A PARTIDA !!! - - -")
+        print(mensagem)
         continua = False
 
 # EXECUÇÃO DO PROJETO:
