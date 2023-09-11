@@ -6,6 +6,7 @@ usuario = "O"
 vez = 1  # 1 - usuário; 2 - computador
 continua = True
 
+
 print("-------------------------------------")
 print("--- JOGO DA VELHA --- TIC-TAC-TOE ---")
 print("-------------------------------------\n")
